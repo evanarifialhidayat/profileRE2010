@@ -21,6 +21,13 @@
   <link href="<c:url value="/resources/lib/ionicons/css/ionicons.min.css" />" rel="stylesheet">
   <link href="<c:url value="/resources/lib/magnific-popup/magnific-popup.css" />" rel="stylesheet">
  <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+ <style>
+       #map {
+        width: 100%;
+        height: 620px;
+            position: relative;
+       }
+    </style>
 </head>
 
 <body>
@@ -34,7 +41,7 @@
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="menu-active"><a href="#intro">Home</a></li>
-          <li><a href="#map">Product</a></li>
+          <li><a href="#map">Map</a></li>
           <li><a href="#gallery">Gallery</a></li>          
           <li><a href="#contact">Contact Us</a></li>
         </ul>
@@ -45,67 +52,45 @@
   <section id="intro">
 
     <div class="intro-text">
-      <h2>Welcome to Big Famely RE 2010</h2>
-      <p>Makan Ga Makan Asal Kumpul</p>
+        <h2 style="color: black;">Welcome to Big Famely RE 2010</h2>
+      <p style="color: #ff0000;" >Makan Ga Makan Asal Kumpul. Buka Bersama Hari 2 Juni 2018 Di Rumah Maulana</p>
+     
     </div>
 
     <div class="product-screens">
 
-      <div class="product-screen-1 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.6s">
+<!--      <div class="product-screen-1 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.6s">
           <img src="<c:url value="/resources/img/product-screen-1.png"/>" alt="">
-      </div>
+      </div>-->
 
     </div>
 
   </section><!-- #intro -->
 
   <main id="main">
-    <section id="map">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 offset-lg-4">
-            <div class="section-header wow fadeIn" data-wow-duration="1s">
-              <h3 class="section-title">Product Featuress</h3>
-              <span class="section-divider"></span>
-            </div>
-          </div>
+    <section id="map">    
+        <script>
+       var marker;
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 18,
+          center: {lat: -6.302731, lng: 106.850624}
+        });
 
-          <div class="col-lg-4 col-md-5 features-img">
-              <img src="<c:url value="/resources/img/product-features.png"/>" alt="" class="wow fadeInLeft">
-          </div>
+        marker = new google.maps.Marker({
+          map: map,
+          draggable: true,
+          animation: google.maps.Animation.DROP,
+          position: {lat: -6.302731, lng: 106.850624}
+        });
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+      }
 
-          <div class="col-lg-8 col-md-7 ">
-
-            <div class="row">
-
-              <div class="col-lg-6 col-md-6 box wow fadeInRight">
-                <div class="icon"><i class="ion-social-buffer-outline"></i></div>
-                <h4 class="title"><a href="">Creew & Payrol Web</a></h4>
-                <p class="description">Aplikasi berbasis web dapat di fungsikan untuk mendeteksi creew yang akan berlayar dan menurunkan creew sampai dengan perhitungan payrol nya dan di lengkapi dengan report sebagai bahan laporannya.</p>
-              </div>
-              <div class="col-lg-6 col-md-6 box wow fadeInRight">
-                <div class="icon"><i class="ion-social-buffer-outline"></i></div>
-                <h4 class="title"><a href="">Creew & Payrol Mobile</a></h4>
-                <p class="description">Aplikasi berbasis Android dapat di fungsikan untuk mendeteksi creew yang akan berlayar dan menurunkan creew sampai dengan perhitungan payrol nya dan di lengkapi dengan report sebagai bahan laporannya.</p>
-              </div>
-              <div class="col-lg-6 col-md-6 box wow fadeInRight">
-                <div class="icon"><i class="ion-social-buffer-outline"></i></div>
-                <h4 class="title"><a href="">APR Web</a></h4>
-                <p class="description">Aplikasi berbasis web dapat di fungsikan sebagai pembantu dokter dalam pencatatan rekam medik sampai laporan yang terintegrasi ke mobile.</p>
-              </div>
-              <div class="col-lg-6 col-md-6 box wow fadeInRight">
-                <div class="icon"><i class="ion-social-buffer-outline"></i></div>
-                <h4 class="title"><a href="">APR Mobile</a></h4>
-                <p class="description">Aplikasi berbasis Android dapat di fungsikan sebagai pembantu menemukan hasil laporan yang sudah di buat oleh dokter dalam APR websait.</p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
+    </script>
+              <script async defer
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBjG_gvuG9orrxFzuMEP1pD2czCOcS5KA&callback=initMap">
+              </script>
+      
     </section><!-- #features -->
     
     <section id="gallery" style="padding-top: 0px;">
@@ -235,7 +220,7 @@
              <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
                 <a href="<c:url value="/resources/img/gallery/u19.jpg"/>" class="gallery-popup">
-                    <img src="<c:url value="/resources/img/gallery/u19.jpg"/>" alt="">
+                    <img src="<c:url value="/resources/img/gallery/u1.jpg"/>" alt="">
               </a>
             </div>
           </div>
@@ -366,10 +351,10 @@
           <div class="col-lg-4 col-md-4">
             <div class="contact-about">
               <h3>Maulana</h3>
-              <p>Anda juga bisa hubungi saya di beberapa alamat sosial media berikut atau bisa juga mengirimkan pesan langsung di websait ini.</p>
+              <p>Info Lebih Lanjut Bisa Hubungi Bapak Maulana.</p>
               <div class="social-links">
                 <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.facebook.com/moe.positif" class="facebook"><i class="fa fa-facebook"></i></a>
                 <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
                 <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
                 <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
@@ -384,14 +369,14 @@
                 <p>Jakarta</p>
               </div>
 
-              <div>
+<!--              <div>
                 <i class="ion-ios-email-outline"></i>
                 <p>evan123hidayat@gmail.com</p>
-              </div>
+              </div>-->
 
               <div>
                 <i class="ion-ios-telephone-outline"></i>
-                <p>081213955483</p>
+                <p>082112790782</p>
               </div>
 
             </div>
@@ -436,17 +421,17 @@
       <div class="row">
         <div class="col-lg-6 text-lg-left text-center">
           <div class="copyright">
-            &copy; Copyright <strong>Avilon</strong>. All Rights Reserved
+            &copy; Copyright <strong>Unindra RE 2010</strong>. All Rights Reserved
           </div>
           <div class="credits">
-                 Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                 Designed by <a href="https://www.facebook.com/groups/156684911044503/?ref=bookmarks">RE 2010</a>
           </div>
         </div>
         <div class="col-lg-6">
           <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
             <a href="#intro" class="scrollto">Home</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Use</a>
+<!--            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>-->
           </nav>
         </div>
       </div>
